@@ -51,6 +51,11 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.1
+  # flutterflow: ^0.1.1
+  flutterflow_ui: ^0.2.0+1
+  # flutter_flow: ^0.1.1
+  # flutter_test: any
+  collection: '>=1.15.0 <1.19.0'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -62,6 +67,8 @@ flutter:
     - assets/images/send.png
     - assets/images/astronaut.png
     - assets/images/welcome2.png
+    - assets/images/back.png
+    - assets/images/shield.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -91,6 +98,10 @@ flutter:
     - family: myfont
       fonts:
         - asset: assets/fonts/GOTHICB0.TTF
+          weight: 700
+    - family: comic
+      fonts: 
+        - asset: assets/fonts/ComicSansMS3.ttf
           weight: 700
   #
   # For details regarding fonts from package dependencies,

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:storywondermobile/onboarding_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MaterialApp(
+      title: "App",
+      home: MyApp(),
+    ));
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
           children: [
@@ -22,14 +25,18 @@ class MyApp extends StatelessWidget {
               ),
             ),
             const Positioned(
-              top: 110, // Adjust the top position as needed
-              left: 280, // Adjust the left position as needed
+              top: 110,
+              left: 280,
               child: AnimatedSticker(),
             ),
             Center(
               child: ElevatedButton(
                   onPressed: () {
-                    // Add your button onPressed logic here
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => OnboardingScreen()),
+                    );
                   },
                   child: const Text(
                     'Unleash Magic',
