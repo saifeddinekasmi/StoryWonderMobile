@@ -1,5 +1,8 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:storywondermobile/onboarding_screen.dart';
+
 
 void main() => runApp(const MaterialApp(
       title: "App",
@@ -11,42 +14,44 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Stack(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/welcome2.png"),
-                  fit: BoxFit.cover,
+    return SafeArea(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/welcome2.png"),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            const Positioned(
-              top: 110,
-              left: 280,
-              child: AnimatedSticker(),
-            ),
-            Center(
-              child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => OnboardingScreen()),
-                    );
-                  },
-                  child: const Text(
-                    'Unleash Magic',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 112, 19, 210),
-                      // Add other text style properties here
-                    ),
-                  )),
-            ),
-          ],
+              const Positioned(
+                top: 110,
+                left: 280,
+                child: AnimatedSticker(),
+              ),
+              Center(
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OnboardingScreen()),
+                      );
+                    },
+                    child: const Text(
+                      'Unleash Magic',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 112, 19, 210),
+                        // Add other text style properties here
+                      ),
+                    )),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -54,7 +59,7 @@ class MyApp extends StatelessWidget {
 }
 
 class AnimatedSticker extends StatefulWidget {
-  const AnimatedSticker({Key? key}) : super(key: key);
+  const AnimatedSticker({super.key});
 
   @override
   _AnimatedStickerState createState() => _AnimatedStickerState();

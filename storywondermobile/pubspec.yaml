@@ -30,8 +30,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  webview_flutter: ^2.0.14
+  webview_flutter: ^4.7.0
   flutter_launcher_icons: ^0.13.1
+  google_nav_bar: ^5.0.6
+  iconsax: ^0.0.8
+  iconsax_flutter: ^1.0.0
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
@@ -51,11 +54,13 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.1
+
   # flutterflow: ^0.1.1
   flutterflow_ui: ^0.2.0+1
   # flutter_flow: ^0.1.1
   # flutter_test: any
   collection: '>=1.15.0 <1.19.0'
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
