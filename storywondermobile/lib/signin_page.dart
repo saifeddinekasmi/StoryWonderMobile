@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'create_character_1.dart';
+import 'CharacterInfo/create_character_1.dart';
 
 class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,7 +33,7 @@ class OnboardingScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'comic',
+                        fontFamily: 'myfont',
                         color: Colors.white,
                       ),
                     ),
@@ -52,7 +54,7 @@ class OnboardingScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 25,
-                          fontFamily: 'comic',
+                          fontFamily: 'myfont',
                           color: Colors.white,
                         ),
                       ),
@@ -66,34 +68,55 @@ class OnboardingScreen extends StatelessWidget {
                 bottom: 70.0,
                 left: 80.0, // Adjust left and right paddings as needed
                 right: 80.0, // Adjust left and right paddings as needed
+
                 child: SizedBox(
-                  width: 250.0, // Set desired button width
-                  height: 50.0, // Set desired button height
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => CharacterOne()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(
-                          0xFF4F3F71), // Set button background color
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        // Logo widget (replace with your logo image)
-                        Image.asset('assets/images/google.png',
-                            width: 30.0, height: 30.0),
-                        const Text(
-                          'Sign in with google',
-                          style: TextStyle(
-                              fontFamily: 'comic',
-                              fontSize: 18,
-                              color: Color.fromARGB(255, 255, 255, 255)),
+                  width: 180,
+                  height: 50,
+                  child: Material(
+                    elevation: 4.0,
+                    borderRadius: BorderRadius.circular(50.0),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CharacterOne()),
+                        );
+                      },
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 255, 255, 255),
+                              Color.fromARGB(255, 255, 255, 255),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                         ),
-                      ],
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(
+                                'assets/images/google.png', // Replace with the actual path to your logo image
+                                width: 30, // Adjust the width as needed
+                                // height: 24, // Adjust the height as needed
+                                // Adjust the color as needed
+                              ),
+                              const Text(
+                                'Sign in with Google',
+                                style: TextStyle(
+                                  fontFamily: 'myfont',
+                                  color: Colors.black,
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
