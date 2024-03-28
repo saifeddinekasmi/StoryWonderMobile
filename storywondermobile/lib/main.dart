@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:storywondermobile/character_info/lanch.dart';
+import 'package:storywondermobile/character_info/name.dart';
 
 void main() => runApp(const MaterialApp(
       title: "App",
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
                           PageRouteBuilder(
                             pageBuilder:
                                 (context, animation, secondaryAnimation) =>
-                                    const CharacterLanch(),
+                                    const CharacterName(),
                             transitionsBuilder: (context, animation,
                                 secondaryAnimation, child) {
                               var begin = const Offset(0.0, 1.0);
@@ -85,7 +86,7 @@ class MyApp extends StatelessWidget {
                           ),
                         ),
                         child: const Padding(
-                          padding: EdgeInsets.only(left: 19),
+                          padding: EdgeInsets.only(left: 0),
                           child: Row(
                             children: [
                               Text(

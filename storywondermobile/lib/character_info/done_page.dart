@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:storywondermobile/character_info/lanch.dart';
+import '../generate_stroy.dart';
 
 import '../appbar/customappbar.dart';
 
@@ -18,6 +19,8 @@ class _CharacterGreatState extends State<CharacterGreat>
   final TextEditingController _nameController = TextEditingController();
   int selectIndex = 0;
   bool isSwitched = false;
+
+  get ssa => null;
 
   @override
   void initState() {
@@ -137,9 +140,10 @@ class _CharacterGreatState extends State<CharacterGreat>
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CharacterLanch(
-                      // childName: _nameController.text,
-                      ),
+                  builder: (context) => SettingsPage(
+                    key: ssa,
+                    // childName: _nameController.text,
+                  ),
                 ),
               );
             },
